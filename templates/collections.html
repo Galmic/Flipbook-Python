@@ -1,0 +1,40 @@
+{% extends 'baseNavigationWithAccount.html' %}
+{% block title %}
+    Collection - Sorsu PDF Flipbook Viewer
+{% endblock %}
+
+{% block content %}
+    <div class="justify-content-end">
+        <button class="btn btn-outline btn-success" style="float:right; margin: 3px;">+ Add PDF</button>
+    </div>
+    
+    <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <!-- Your Columns HERE -->
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Owner</th>
+                <th scope="col">Date Created</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Your rows inside the table HERE: -->
+            {% for item in items %}
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.owner}}</td>
+                    <td>{{item.created}}</td>
+                    <td>
+                        <button class="btn btn-outline btn-light">View</button>
+                        <button class="btn btn-outline btn-warning">Rename</button>
+                        <button class="btn btn-outline btn-danger">Delete</button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
